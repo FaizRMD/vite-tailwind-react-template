@@ -78,15 +78,20 @@ const About = () => {
             </motion.div>
           </div>
 
-          {/* Image */}
+          {/* Enhanced Hero Image */}
           <div className="fade-zoom flex justify-center md:justify-end relative">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-[#3F72AF]/20 to-[#DBE2EF]/30 rounded-3xl blur-2xl transform rotate-6"></div>
-              <img
-                src="/foto/Depression-removebg-preview.png"
-                alt="Mental Health App"
-                className="relative w-72 md:w-96 lg:w-[400px] object-contain drop-shadow-2xl z-10 transform hover:scale-105 transition-transform duration-500"
-              />
+              <div className="relative bg-white/80 backdrop-blur-sm p-6 rounded-3xl shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                  alt="Mental Health Journey - Person in peaceful meditation"
+                  className="relative w-72 md:w-96 lg:w-[400px] h-80 object-cover rounded-2xl drop-shadow-2xl z-10 transform hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-[#3F72AF] to-[#112D4E] text-white text-xs px-3 py-1 rounded-full shadow-lg font-medium">
+                  🌱 Growth & Healing
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -122,15 +127,16 @@ const About = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            {/* Image */}
+            {/* Enhanced About Image */}
             <div className="relative fade-zoom">
               <div className="absolute inset-0 bg-gradient-to-br from-[#3F72AF]/10 to-[#DBE2EF]/20 rounded-3xl transform rotate-3"></div>
-              <div className="relative bg-white p-2 rounded-3xl shadow-2xl">
+              <div className="relative bg-white p-3 rounded-3xl shadow-2xl">
                 <img
-                  src="https://img.freepik.com/premium-photo/mental-health-disorder-concept-bipolar-disorder-person-unstable-psycho-layers-paper-cut-as-human-head-presenting-different-emotions-happiness-depression-emotion-inside_34048-1575.jpg"
-                  alt="About Selfmend"
+                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                  alt="Mental wellness support - Caring hands offering comfort"
                   className="rounded-2xl w-full object-cover h-96"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#112D4E]/20 to-transparent rounded-2xl"></div>
               </div>
               <div className="absolute -top-4 -right-4 bg-gradient-to-r from-[#3F72AF] to-[#112D4E] text-white text-sm px-4 py-2 rounded-2xl shadow-lg font-semibold">
                 🌟 Trusted by 10K+ Users
@@ -182,7 +188,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Enhanced Features Section */}
       <section className="bg-gradient-to-br from-[#DBE2EF]/30 to-[#F9F7F7] px-6 md:px-20 py-24 fade-up">
         <div className="w-full max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -199,17 +205,20 @@ const About = () => {
               {
                 icon: "🧠",
                 title: "AI-Powered Insights",
-                description: "Advanced algorithms provide personalized recommendations based on your unique mental health journey and patterns."
+                description: "Advanced algorithms provide personalized recommendations based on your unique mental health journey and patterns.",
+                image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
               },
               {
                 icon: "🔒",
                 title: "Privacy First",
-                description: "Your data is encrypted and secure. We prioritize your privacy while delivering exceptional mental health support."
+                description: "Your data is encrypted and secure. We prioritize your privacy while delivering exceptional mental health support.",
+                image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
               },
               {
                 icon: "⚡",
                 title: "24/7 Accessibility",
-                description: "Access support whenever you need it. Our platform is available round-the-clock for your mental wellness needs."
+                description: "Access support whenever you need it. Our platform is available round-the-clock for your mental wellness needs.",
+                image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
               }
             ].map((feature, i) => (
               <motion.div
@@ -217,28 +226,53 @@ const About = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: i * 0.2 }}
-                className="bg-white/70 backdrop-blur-sm p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-2 border border-[#DBE2EF]/50"
+                className="bg-white/70 backdrop-blur-sm rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 group hover:-translate-y-2 border border-[#DBE2EF]/50 overflow-hidden"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-[#3F72AF] to-[#112D4E] rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                  {feature.icon}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={feature.image} 
+                    alt={feature.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#112D4E]/20 to-transparent"></div>
+                  <div className="absolute top-4 left-4 w-12 h-12 bg-gradient-to-br from-[#3F72AF] to-[#112D4E] rounded-xl flex items-center justify-center text-xl shadow-lg">
+                    {feature.icon}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-[#112D4E] mb-4">{feature.title}</h3>
-                <p className="text-[#112D4E]/70 leading-relaxed">{feature.description}</p>
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-[#112D4E] mb-3">{feature.title}</h3>
+                  <p className="text-[#112D4E]/70 leading-relaxed">{feature.description}</p>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Enhanced CTA Section */}
       <section className="bg-gradient-to-r from-[#3F72AF] to-[#112D4E] px-6 md:px-20 py-20 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#112D4E]/50 to-[#3F72AF]/50"></div>
+        
+        {/* Background Image Overlay */}
+        <div className="absolute inset-0 opacity-10">
+          <img 
+            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+            alt="Background"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        
         <div className="w-full max-w-4xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <div className="mb-8">
+              <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-3xl">🌟</span>
+              </div>
+            </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Ready to Start Your Journey?
             </h2>
